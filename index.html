@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body> div{
+            display: flex;
+            flex-direction: row;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        canvas {
+            border: black solid 2px;
+        }
+
+        .control-panel {
+            width: 80%;
+            padding: 5%
+        }
+
+        .slider {
+            display: flex;
+            padding: 10% 0;
+            justify-content: space-between;
+        }
+
+        .deaths {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div>
+        <h1>Generation <span class="generation-num">1</span></h1>
+
+        <canvas width=800 height=800></canvas>
+    </div>
+    <div class="control-panel">
+        <header>
+            <button class="startBtn">Start</button>
+            <button class="pauseBtn">Pause</button>
+            <button class="nextGenBtn">NEXT GEN</button>
+            <button class="autoplayBtn">AUTOPLAY: <span>OFF</span></button>
+        </header>
+        <div class="slider" id="">
+            <h3>Mutation-Rate:</h3>
+            <input type="range" step="0.01" min="0" max=".5" value=".01" data-color="#f00" class="range-slider"/>
+            <input type="number" step="0.01" min="0" max=".5" value=".01" class="input-slider"/>
+        </div>
+    </div>
+</div>
+<h2 class="deaths"><span>XX</span> deaths</h2>
+</body>
+<!--<script src="src/utils/config.js" type="module"></script>-->
+<!--<script src="src/utils/gene.js" type="module"></script>-->
+
+<!--<script src="src/utils/Brain.js" type="module"></script>-->
+<!--<script src="src/Organism.js" type="module"></script>-->
+<!--<script src="src/utils/Environment.js" type="module"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.7.7/babel.min.js"></script>-->
+<!--<script text="text/babel">-->
+<!--    require("src/index")-->
+<!--    console.log(output);-->
+<!--</script>-->
+<script src="src/index.js" type="module"></script>
+</html>

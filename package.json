@@ -1,0 +1,19 @@
+{
+  "name": "EvolutionEnv",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.js --exec babel-node",
+    "build": "babel ./src -d dist"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.10",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "crypto": "^1.0.1",
+    "nodemon": "^2.0.15",
+    "xstate": "^4.28.1"
+  }
+}
