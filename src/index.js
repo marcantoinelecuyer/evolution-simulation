@@ -5,9 +5,10 @@ const canvas = document.querySelector('canvas')
 canvas.width = config.SIZE * 5
 canvas.height = config.SIZE * 5
 
-const ENV = new Environment(canvas)
+let ENV
 
 const init = () => {
+    ENV = new Environment(canvas)
     ENV.init(animate)
 }
 

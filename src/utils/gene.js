@@ -91,18 +91,19 @@ export const randomGene = () => {
 // SENSOR-types
 export const sensor = {
     Age: 1,  // Age
-    // Gen: 2,  // Generation
+    Gen: 2,  // Generation
     Lx: 3,   // Location on X-axis
     Ly: 4,   // Location on Y-axis
-    LPf: 5,  // Population last movement direction
+    LPx: 5,  // Population last movement direction in X
+    LPy: 5,  // Population last movement direction in Y
     BdX: 6,  // Closest boundary dist in X
     BdY: 7,  // Closest boundary dist in Y
     Ldx: 8,  // last moved direction in X
     Ldy: 9,  // last moved direction in Y
-    // NiF: 10, // forward-distance of nearest individual
-    // NbF: 11, // forward-distance of nearest boundary
+    NiF: 10, // forward-distance of nearest individual
+    NbF: 11, // forward-distance of nearest boundary
     Pop: 12, // Population density in neighborhood
-    // Ran: 13, //Random value
+    Ran: 13, //Random value
 }
 const sensorsLength = Object.keys(sensor).length
 
@@ -114,8 +115,7 @@ export const action = {
     MvR: 4, // Move right
     TrL: 5,  // Turn left
     TrR: 6,  // Turn right
-    // MRa: 7,  // Move random
-
+    MRa: 7,  // Move random
 }
 const actionsLength = Object.keys(action).length
 
@@ -189,13 +189,16 @@ export const sense = {
         return sensorVal(y, config.SIZE)
     },
 
-    [sensor.LPf]: ({env}) => {              // Population last movement direction
-        let dir = [0, 0]
-        env.organisms.forEach(org => dir = [dir[0] + org.lastX, dir[1] + org.lastY])
-        if (Math.abs(dir[0]) >= Math.abs(dir[1]))
-            return sensorVal(dir[0] >= 0 ? 2 : 4, 4)
-        else
-            return sensorVal(dir[1] >= 0 ? 1 : 3, 4)
+    [sensor.LPx]: ({env}) => {              // Population last movement direction in X
+        let dir = 0
+        env.organisms.forEach(org => dir += org.lastX)
+        return dir[0] >= 0 ? 1 : -1
+    },
+
+    [sensor.LPy]: ({env}) => {              // Population last movement direction in Y
+        let dir = 0
+        env.organisms.forEach(org => dir += org.lastY)
+        return dir[0] >= 0 ? 1 : -1
     },
 
     [sensor.BdX]: ({x}) => {                // Closest boundary dist in X

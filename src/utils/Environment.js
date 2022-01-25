@@ -63,7 +63,7 @@ export default class Environment {
         this.generation++
         this.age = 0
         const newOrganisms = new Set()
-        if (this.organisms) {
+        if (this.organisms && this.organisms.size > 0) {
             while (newOrganisms.size < config.POPULATION) {
                 for (const org of this.organisms) {
                     if (newOrganisms.size === config.POPULATION)
