@@ -1,5 +1,5 @@
 import {decryptGene, execute, sense} from "./gene.js"
-import {config} from "./config.js"
+import {config} from "../config.js"
 
 export default class Brain {
     constructor(genes) {

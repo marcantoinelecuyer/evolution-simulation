@@ -1,4 +1,4 @@
-import {config} from "./config.js";
+import {config} from "../config.js";
 
 /**
  // gene[0] = source-type: sensory vs internal

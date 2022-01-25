@@ -1,4 +1,4 @@
-import {config} from "./utils/config.js";
+import {config} from "./config.js";
 
 export default class Interface {
     static setGeneration(newGen) {

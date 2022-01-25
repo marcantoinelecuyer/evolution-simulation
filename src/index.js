@@ -1,5 +1,5 @@
-import {config} from "./utils/config.js";
-import Environment from "./utils/Environment.js"
+import {config} from "./config.js";
+import Environment from "./Environment.js"
 
 const canvas = document.querySelector('canvas')
 canvas.width = config.SIZE * 5

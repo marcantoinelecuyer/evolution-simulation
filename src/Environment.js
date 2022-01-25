@@ -1,7 +1,7 @@
-import {config} from "./config.js";
-import Organism from "../Organism.js";
-import {generate_gene_color, randomGene, sense} from "./gene.js";
-import Interface from "../Interface.js";
+import {config} from "./config.js"
+import Organism from "./Organism/Organism.js"
+import {generate_gene_color, randomGene, sense} from "./Organism/gene.js"
+import Interface from "./Interface.js"
 
 let danger_zone //= [100, 0, 800, 700]
 let safe_zone = [200, 200, 600, 600]
@@ -37,7 +37,7 @@ export default class Environment {
         const ctx = this.canvas.getContext('2d')
         ctx.globalCompositeOperation = 'destination-over';
         ctx.clearRect(0, 0, config.SIZE * 5, config.SIZE * 5)
-        // Mark danger-zone
+        // Mark danger/safe-zone
         if (danger_zone) {
             ctx.fillStyle = 'rgb(255,0,0,.1)'
             ctx.fillRect(danger_zone[0], danger_zone[1], danger_zone[2] - danger_zone[0], danger_zone[3] - danger_zone[1])

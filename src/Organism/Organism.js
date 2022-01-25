@@ -1,6 +1,6 @@
-import {config} from "./utils/config.js";
-import Brain from "./utils/Brain.js"
-import {mutate} from "./utils/gene.js";
+import {config} from "../config.js";
+import Brain from "./Brain.js"
+import {mutate} from "./gene.js";
 
 export default class Organism {
     constructor(x, y, parentGenes) {
